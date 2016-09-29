@@ -1,0 +1,170 @@
+/* Breakpoint 4 - Default */
+.pad {
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.w-10  {	width: 10%;  }
+.w-20  {	width: 20%;  }
+.w-25  {	width: 20%;  }
+.w-30  {	width: 30%;  }
+.w-33  {	width: 33%;  }
+.w-40  {	width: 40%;  }
+.w-50  {	width: 50%;  }
+.w-60  {	width: 60%;  }
+.w-66  {	width: 66%;  }
+.w-70  {	width: 70%;  }
+.w-75  {	width: 75%;  }
+.w-80  {	width: 80%;  }
+.w-90  {	width: 90%;  }
+.w-100 {	width: 100%; }
+
+.indent-10  {	margin-left: 10%;  }
+.indent-20  {	margin-left: 20%;  }
+.indent-25  {	margin-left: 20%;  }
+.indent-30  {	margin-left: 30%;  }
+.indent-33  {	margin-left: 33%;  }
+.indent-40  {	margin-left: 40%;  }
+.indent-50  {	margin-left: 50%;  }
+.indent-60  {	margin-left: 60%;  }
+.indent-66  {	margin-left: 66%;  }
+.indent-70  {	margin-left: 70%;  }
+.indent-75  {	margin-left: 75%;  }
+.indent-80  {	margin-left: 80%;  }
+.indent-90  {	margin-left: 90%;  }
+.indent-100 {	margin-left: 100%; }
+
+/* Breakpoint 5 */
+@media all and (min-width: 1140px) {
+	.w5-10  {	width: 10%;  }
+	.w5-20  {	width: 20%;  }
+	.w5-25  {	width: 20%;  }
+	.w5-30  {	width: 30%;  }
+	.w5-33  {	width: 33%;  }
+	.w5-40  {	width: 40%;  }
+	.w5-50  {	width: 50%;  }
+	.w5-60  {	width: 60%;  }
+	.w5-66  {	width: 66%;  }
+	.w5-70  {	width: 70%;  }
+	.w5-75  {	width: 75%;  }
+	.w5-80  {	width: 80%;  }
+	.w5-90  {	width: 90%;  }
+	.w5-100 {	width: 100%; }
+
+	.indent5-10  {	margin-left: 10%;  }
+	.indent5-20  {	margin-left: 20%;  }
+	.indent5-25  {	margin-left: 20%;  }
+	.indent5-30  {	margin-left: 30%;  }
+	.indent5-33  {	margin-left: 33%;  }
+	.indent5-40  {	margin-left: 40%;  }
+	.indent5-50  {	margin-left: 50%;  }
+	.indent5-60  {	margin-left: 60%;  }
+	.indent5-66  {	margin-left: 66%;  }
+	.indent5-70  {	margin-left: 70%;  }
+	.indent5-75  {	margin-left: 75%;  }
+	.indent5-80  {	margin-left: 80%;  }
+	.indent5-90  {	margin-left: 90%;  }
+	.indent5-100 {	margin-left: 100%; }
+}
+
+/* Breakpoint 3 */
+@media all and (max-width: 976px) {
+	.w3-10  {	width: 10%;  }
+	.w3-20  {	width: 20%;  }
+	.w3-25  {	width: 20%;  }
+	.w3-30  {	width: 30%;  }
+	.w3-33  {	width: 33%;  }
+	.w3-40  {	width: 40%;  }
+	.w3-50  {	width: 50%;  }
+	.w3-60  {	width: 60%;  }
+	.w3-66  {	width: 66%;  }
+	.w3-70  {	width: 70%;  }
+	.w3-75  {	width: 75%;  }
+	.w3-80  {	width: 80%;  }
+	.w3-90  {	width: 90%;  }
+	.w3-100 {	width: 100%; }
+
+	.indent3-10  {	margin-left: 10%;  }
+	.indent3-20  {	margin-left: 20%;  }
+	.indent3-25  {	margin-left: 20%;  }
+	.indent3-30  {	margin-left: 30%;  }
+	.indent3-33  {	margin-left: 33%;  }
+	.indent3-40  {	margin-left: 40%;  }
+	.indent3-50  {	margin-left: 50%;  }
+	.indent3-60  {	margin-left: 60%;  }
+	.indent3-66  {	margin-left: 66%;  }
+	.indent3-70  {	margin-left: 70%;  }
+	.indent3-75  {	margin-left: 75%;  }
+	.indent3-80  {	margin-left: 80%;  }
+	.indent3-90  {	margin-left: 90%;  }
+	.indent3-100 {	margin-left: 100%; }
+}
+
+/* Breakpoint 2 */
+@media all and (max-width: 767px) {
+	.w2-10  {	width: 10%;  }
+	.w2-20  {	width: 20%;  }
+	.w2-25  {	width: 20%;  }
+	.w2-30  {	width: 30%;  }
+	.w2-33  {	width: 33%;  }
+	.w2-40  {	width: 40%;  }
+	.w2-50  {	width: 50%;  }
+	.w2-60  {	width: 60%;  }
+	.w2-66  {	width: 66%;  }
+	.w2-70  {	width: 70%;  }
+	.w2-75  {	width: 75%;  }
+	.w2-80  {	width: 80%;  }
+	.w2-90  {	width: 90%;  }
+	.w2-100 {	width: 100%; }
+
+	.indent2-10  {	margin-left: 10%;  }
+	.indent2-20  {	margin-left: 20%;  }
+	.indent2-25  {	margin-left: 20%;  }
+	.indent2-30  {	margin-left: 30%;  }
+	.indent2-33  {	margin-left: 33%;  }
+	.indent2-40  {	margin-left: 40%;  }
+	.indent2-50  {	margin-left: 50%;  }
+	.indent2-60  {	margin-left: 60%;  }
+	.indent2-66  {	margin-left: 66%;  }
+	.indent2-70  {	margin-left: 70%;  }
+	.indent2-75  {	margin-left: 75%;  }
+	.indent2-80  {	margin-left: 80%;  }
+	.indent2-90  {	margin-left: 90%;  }
+	.indent2-100 {	margin-left: 100%; }
+}
+
+/* Breakpoint 1 Only */
+@media all and (max-width: 599px){
+	.w1-10  {	width: 10%;  }
+	.w1-20  {	width: 20%;  }
+	.w1-25  {	width: 20%;  }
+	.w1-30  {	width: 30%;  }
+	.w1-33  {	width: 33%;  }
+	.w1-40  {	width: 40%;  }
+	.w1-50  {	width: 50%;  }
+	.w1-60  {	width: 60%;  }
+	.w1-66  {	width: 66%;  }
+	.w1-70  {	width: 70%;  }
+	.w1-75  {	width: 75%;  }
+	.w1-80  {	width: 80%;  }
+	.w1-90  {	width: 90%;  }
+	.w1-100 {	width: 100%; }
+
+	.indent1-10  {	margin-left: 10%;  }
+	.indent1-20  {	margin-left: 20%;  }
+	.indent1-25  {	margin-left: 20%;  }
+	.indent1-30  {	margin-left: 30%;  }
+	.indent1-33  {	margin-left: 33%;  }
+	.indent1-40  {	margin-left: 40%;  }
+	.indent1-50  {	margin-left: 50%;  }
+	.indent1-60  {	margin-left: 60%;  }
+	.indent1-66  {	margin-left: 66%;  }
+	.indent1-70  {	margin-left: 70%;  }
+	.indent1-75  {	margin-left: 75%;  }
+	.indent1-80  {	margin-left: 80%;  }
+	.indent1-90  {	margin-left: 90%;  }
+	.indent1-100 {	margin-left: 100%; }
+}
+
+
+

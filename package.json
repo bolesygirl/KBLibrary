@@ -1,5 +1,5 @@
 {
-  "name": "KBLibrary",
+  "name": "kblibrary",
   "version": "1.0.0",
   "description": "Katie Boland Library",
   "devDependencies": {
@@ -7,11 +7,12 @@
     "globby": "^6.0.0",
     "gulp": "^3.9.0",
     "gulp-asset-manifest": "0.0.6",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
     "gulp-footer": "^1.0.5",
     "gulp-header": "^1.8.7",
     "gulp-if": "^2.0.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp-install": "^0.6.0",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^1.12.0",
     "gulp-lintspaces": "^0.2.5",
@@ -47,5 +48,9 @@
   },
   "author": "Katie Boland",
   "license": "BSD-2-Clause",
-  "dependencies": {}
+  "dependencies": {},
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
