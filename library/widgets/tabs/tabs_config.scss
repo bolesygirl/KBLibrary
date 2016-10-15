@@ -1,0 +1,17 @@
+$tabs: (
+	stackWidth: 599px, /* Below this width the tabs will stack rather than display as tabs */
+	tablinks: (
+		height: 44px,
+		bgColor: #ddd,
+		fontWeight: normal,
+		padding: 0 10px,
+		fontSize: 16px,
+		border: none,
+		margin: 0 1px 0 0
+	),
+	content: (
+		height: 450px,
+		bgColor: #f2f2f2,
+		padding: 15px
+	)
+);

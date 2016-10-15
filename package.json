@@ -9,6 +9,7 @@
     "gulp-asset-manifest": "0.0.6",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.0",
+    "gulp-ejs": "^2.2.1",
     "gulp-footer": "^1.0.5",
     "gulp-header": "^1.8.7",
     "gulp-if": "^2.0.1",
@@ -29,6 +30,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.4",
     "gulp-util": "^3.0.7",
+    "gulp-watch-ejs": "^0.2.3",
     "is-ci": "^1.0.9",
     "jasmine-core": "^2.4.1",
     "jshint-stylish": "^2.1.0",
@@ -44,6 +46,7 @@
     "path": "^0.12.7",
     "phantomjs-prebuilt": "2.1.4",
     "run-sequence": "^1.2.2",
+    "webpack": "^1.13.2",
     "yargs": "^4.8.1"
   },
   "author": "Katie Boland",

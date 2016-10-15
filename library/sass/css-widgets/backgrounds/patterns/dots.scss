@@ -1,0 +1,39 @@
+@mixin dots($size, $color, $spacing){
+	background: radial-gradient(circle, $color $size, transparent $size), radial-gradient(circle, $color $size, $transparent $size) #{$spacing/2}px #{$spacing/2}px;
+    background-size: #{$spacing}px #{$spacing}px;
+}
+
+.overlay_dots_white {
+    @include dots(5px, #fff, 50px);
+}
+
+.overlay_dots_black {
+    @include dots(5px, #000, 50px);
+}
+
+@mixin chequer($size, $color){
+	background-image: linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color), 
+    linear-gradient(45deg, $color 25%, transparent 25%, transparent 75%, $color 75%, $color);
+    background-size: #{$size}px #{$size}px;
+    background-position: 0 0, #{$size/2}px #{$size/2}px;
+}
+
+.overlay_chequered_white {
+    @include chequer(50px, #fff);
+}
+
+.overlay_chequered_black {
+    @include chequer(50px, #000);
+}
+
+@mixin stripes($size, $color, $angle){
+	background: repeating-linear-gradient(#{$angle}deg, transparent, transparent #{$size}px, $color #{$size}px, $color #{$size*2}px);
+}
+
+.overlay_stripes_white {
+    @include stripes(10px, #fff);
+}
+
+.overlay_stripes_black {
+    @include stripes(10px, #000);
+}

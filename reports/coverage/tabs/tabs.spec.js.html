@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tabs\tabs.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">tabs/</a> tabs.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>71/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>71/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+describe('Tabs component', function () {
+	var basicTabMarkup = '&lt;div class="tab"&gt;&lt;button&gt;&lt;/button&gt;&lt;div class="content"&gt;&lt;/div&gt;&lt;/div&gt;',
+		markupNoTabs = '&lt;div class="tabs"&gt;&lt;/div&gt;',
+		markupWithOneTab = '&lt;div class="tabs"&gt;'+basicTabMarkup+'&lt;/div&gt;',
+		markupWithTwoTabs = '&lt;div class="tabs"&gt;'+basicTabMarkup+basicTabMarkup+'&lt;/div&gt;',
+		markupWithSecondTabActive = '&lt;div class="tabs"&gt;'+basicTabMarkup+'&lt;div class="tab active"&gt;&lt;button&gt;&lt;/button&gt;&lt;div class="content"&gt;&lt;/div&gt;&lt;/div&gt;'+basicTabMarkup+'&lt;/div&gt;',
+		fullTabMarkup = '&lt;div class="tabs"&gt;&lt;div class="tab"&gt;&lt;button id="tabTrigger1"&gt;&lt;/button&gt;&lt;div class="content" id="tabContent1"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="tab"&gt;&lt;button id="tabTrigger2"&gt;&lt;/button&gt;&lt;div class="content" id="tabContent2"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
+	
+	$('body').append('&lt;div id="tabsHolder"&gt;&lt;/div&gt;');
+&nbsp;
+	it('If it contains no tabs it should not trigger any JS errors', function() {
+		$('#tabsHolder').html(markupNoTabs);
+		$(document).trigger('reinitWidgets');
+		expect($('.tabs').length).toBe(1);
+		expect($('.tab.active').length).toBe(0);
+	});
+&nbsp;
+	it('If it contains one tab that does not have the class active applied it should automatically make it active', function() {
+		$('#tabsHolder').html(markupWithOneTab);
+		$(document).trigger('reinitWidgets');
+&nbsp;
+		expect($('.tabs').length).toBe(1);
+		expect($('.tabs').eq(0).find('.tab').eq(0).is('.active')).toBe(true);
+	});
+&nbsp;
+	it('If it contains two tabs and neither of them already has the class active applied it should automatically make the first one active', function() {
+		$('#tabsHolder').html(markupWithTwoTabs);
+		$(document).trigger('reinitWidgets');
+&nbsp;
+		expect($('.tabs').length).toBe(1);
+&nbsp;
+		var tabs = $('.tabs').eq(0).find('.tab');
+		expect(tabs.length).toBe(2);
+		expect(tabs.eq(0).is('.active')).toBe(true);
+		expect(tabs.eq(1).is('.active')).toBe(false);
+	});
+&nbsp;
+	it('If it contains multiple tabs and one of them already has the class active applied the first one should not get the class active and the other one should remain active', function() {
+		$('#tabsHolder').html(markupWithSecondTabActive);
+		$(document).trigger('reinitWidgets');
+&nbsp;
+		expect($('.tabs').length).toBe(1);
+&nbsp;
+		var tabs = $('.tabs').eq(0).find('.tab');
+		expect(tabs.length).toBe(3);
+		expect(tabs.eq(0).is('.active')).toBe(false);
+		expect(tabs.eq(1).is('.active')).toBe(true);
+		expect(tabs.eq(2).is('.active')).toBe(false);
+	});
+&nbsp;
+	it('Clicking on a tab trigger should show and focus the tab content and hide other tabs', function(){
+		$('#tabsHolder').html(fullTabMarkup);
+		$(document).trigger('reinitWidgets');
+&nbsp;
+		var tabs = $('.tabs').eq(0).find('.tab'),
+			trigger1 = $('#tabTrigger1'),
+			trigger2 = $('#tabTrigger2'),
+			content1 = $('#tabContent1'),
+			content2 = $('#tabContent2');
+&nbsp;
+		trigger1.click();
+		expect(tabs.eq(0).is('.active')).toBe(true);
+		expect(tabs.eq(1).is('.active')).toBe(false);
+&nbsp;
+		trigger2.click();
+		expect(tabs.eq(1).is('.active')).toBe(true);
+		expect(tabs.eq(0).is('.active')).toBe(false);
+	});
+&nbsp;
+	it('The aria tags should reflect the active/inactive tab states', function(){
+		$('#tabsHolder').html(fullTabMarkup);
+		$(document).trigger('reinitWidgets');
+&nbsp;
+		var tabs = $('.tabs').eq(0).find('.tab'),
+			trigger1 = $('#tabTrigger1'),
+			trigger2 = $('#tabTrigger2'),
+			content1 = $('#tabContent1'),
+			content2 = $('#tabContent2');
+&nbsp;
+		//Without clicking - initial state
+		expect(tabs.eq(0).is('.active')).toBe(true);
+&nbsp;
+		expect(trigger1.attr('aria-selected')).toEqual('true');
+		expect(trigger2.attr('aria-selected')).toEqual('false');
+&nbsp;
+		expect(content1.attr('aria-expanded')).toEqual('true');
+		expect(content2.attr('aria-expanded')).toEqual('false');
+&nbsp;
+		expect(content1.attr('aria-hidden')).toEqual('false');
+		expect(content2.attr('aria-hidden')).toEqual('true');
+&nbsp;
+		//After clicking on tab 1 (Nothing should change except the content should get focus)
+		trigger1.click();
+		expect(tabs.eq(0).is('.active')).toBe(true);
+		expect(tabs.eq(1).is('.active')).toBe(false);
+&nbsp;
+		expect(trigger1.attr('aria-selected')).toEqual('true');
+		expect(trigger2.attr('aria-selected')).toEqual('false');
+&nbsp;
+		expect(content1.attr('aria-expanded')).toEqual('true');
+		expect(content2.attr('aria-expanded')).toEqual('false');
+&nbsp;
+		expect(content1.attr('aria-hidden')).toEqual('false');
+		expect(content2.attr('aria-hidden')).toEqual('true');
+&nbsp;
+		expect(content1[0] === document.activeElement).toBe(true);
+&nbsp;
+		//After clicking on tab 2
+		trigger2.click();
+		expect(tabs.eq(1).is('.active')).toBe(true);
+		expect(tabs.eq(0).is('.active')).toBe(false);
+&nbsp;
+		expect(trigger2.attr('aria-selected')).toEqual('true');
+		expect(trigger1.attr('aria-selected')).toEqual('false');
+&nbsp;
+		expect(content2.attr('aria-expanded')).toEqual('true');
+		expect(content1.attr('aria-expanded')).toEqual('false');
+&nbsp;
+		expect(content2.attr('aria-hidden')).toEqual('false');
+		expect(content1.attr('aria-hidden')).toEqual('true');
+&nbsp;
+		expect(content2[0] === document.activeElement).toBe(true);
+&nbsp;
+	});
+&nbsp;
+});</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Oct 15 2016 19:41:15 GMT+1100 (AUS Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

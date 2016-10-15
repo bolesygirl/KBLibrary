@@ -2,10 +2,10 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var paths = require('../config');
+var paths = require('../../config');
 var runSequence = require('run-sequence');
 var sassSrc = paths.lib.sass;
-var sassDest = './dist';
+var sassDest = paths.lib.dest.styles;
 
 gulp.task('clean:style:lib', function () {
     console.log('========CLEANING========');
@@ -32,7 +32,7 @@ gulp.task('sass:style:lib', function () {
             browsers: ['last 5 versions'],
             cascade: false
         }))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest(sassDest))
         .on('error', plugins.util.log);
 });
 

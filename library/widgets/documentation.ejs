@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.min.css" type="text/css"/>
+
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+
+<% 
+	var components = ['tabs'],
+		component,
+		partialUrl,
+		htmlUrl,
+		sassUrl,
+		cssUrl,
+		jsUrl,
+		c = 0;
+
+	for(c=0;c<components.length;c++){
+		component = components[c];
+		partialUrl = component + '/' + component;
+		htmlUrl = partialUrl + '.html';
+		sassUrl = partialUrl + '.scss';
+		jsUrl = partialUrl + '.js';
+		testUrl = partialUrl + '.spec.js';
+		docsUrl = partialUrl + '_doc.ejs';
+		cssConfigUrl = partialUrl + '_config.scss';
+		cssUrl = '../styles/' + component + '/' + component + '.css';
+%>
+	<section>
+		<h1><%= component %></h1>
+
+		<div class="tabs">
+			<div class="tab active">
+				<button>
+					<h3>About</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<%- include(docsUrl) %>
+				</div>
+			</div>
+			<div class="tab">
+				<button>
+					<h3>Preview</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<%- include(htmlUrl) %>
+				</div>
+			</div>			
+			<div class="tab">
+				<button>
+					<h3>Markup</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<pre><code data-language="html"><%- include(htmlUrl) %></code></pre>
+				</div>
+			</div>
+			<div class="tab">
+				<button class="heading">
+					<h3>SASS config</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<pre><code data-language="css"><%- include(cssConfigUrl) %></code></pre>
+				</div>
+			</div>
+			<div class="tab">
+				<button>
+					<h3>SASS</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<pre><code data-language="css"><%- include(sassUrl) %></code></pre>
+				</div>
+			</div>
+			<div class="tab">
+				<button>
+					<h3>JavaScript</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<pre><code data-language="js"><%- include(jsUrl) %></code></pre>
+				</div>
+			</div>
+			<div class="tab">
+				<button>
+					<h3>Tests</h3>
+				</button>
+				<div class="content" tabindex="-1">
+					<pre><code data-language="js"><%- include(testUrl) %></code></pre>
+				</div>
+			</div>
+		</div>
+
+		<link rel="stylesheet" href="<%= cssUrl %>" type="text/css"/>
+		<script type="text/javascript">
+			<%- include(jsUrl) %>
+		</script>
+
+	</section>
+
+<% 
+	}
+%>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/css.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+$bgColour: #ffe !default;
+$fgColour: #000 !default;
+$arrowSize: 6px !default;
+$cornerRadius: 3px !default;
+
+.csstooltip[aria-label] {
+	position: relative;
+
+	:before,
+	:after {
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		display: none;
+	}
+
+	:hover {
+		:before,
+		:after {
+			display: block;
+		}
+	}
+
+	:before {
+		content: attr(aria-label);
+		padding: 2px 4px;
+		background: #{$bgColour};
+		color: #{$fgColour};
+		border-radius: #{$cornerRadius};
+		margin-top: -#{$arrowSize};
+	}
+
+	:after {
+		content: "";
+		left: #{$arrowSize};
+		border: #{$arrowSize} solid transparent;
+		border-bottom: none;
+		border-top: #{$arrowSize} solid #{$bgColour};
+	}
+}

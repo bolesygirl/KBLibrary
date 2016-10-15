@@ -1,0 +1,84 @@
+@import "tabs_config";
+
+@function getTabProperty($component, $property){
+	@return map-get(map-get($tabs, $component), $property);
+}
+
+@function getTotalHeight(){
+	@return getTabProperty(tablinks, height) + getTabProperty(content, height);
+}
+
+.tabs {
+	height: getTotalHeight();
+	position: relative;
+	.tab {
+		display: inline;
+		> .content {
+			position: absolute;
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			overflow: auto;
+			height: getTabProperty(content, height);
+			top: getTabProperty(tablinks, height);
+			padding: getTabProperty(content, padding);
+			background: getTabProperty(content, bgColor);
+		}
+
+		> a,
+		> button {
+			text-decoration: none;
+		    display: block;
+		    float: left;
+		    margin: getTabProperty(tablinks, margin);
+		    border: getTabProperty(tablinks, border);
+		    font-size: getTabProperty(tablinks, fontSize);
+			padding: getTabProperty(tablinks, padding);
+		    height: getTabProperty(tablinks, height);
+		    line-height: getTabProperty(tablinks, height);
+			background: getTabProperty(tablinks, bgColor);
+			font-weight: getTabProperty(tablinks, fontWeight);
+			h3 {
+				font-size: inherit;
+				font-weight: getTabProperty(tablinks, fontWeight);
+				margin: 0;
+				padding: 0;
+			    height: getTabProperty(tablinks, height);
+			    line-height: getTabProperty(tablinks, height);
+			}
+		}
+
+		&.active {
+			> button {
+				background: getTabProperty(content, bgColor);
+			}
+			> .content {
+				display: block;
+			}
+		}
+	}
+}
+
+@media all and (max-width: map-get($tabs, stackWidth)) {
+	.tabs {
+		.tab {
+			display: block;
+
+			> a,
+			> button {
+				float: none;
+				clear: both;
+				width: 100%;
+				box-sizing: border-box;
+				text-align: left;
+				h3 {
+					font-weight: bold;
+				}
+			}
+			> .content {
+				position: static;
+				top: auto;
+			}
+		}
+	}
+}

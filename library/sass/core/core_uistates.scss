@@ -1,0 +1,37 @@
+/* Variables */
+$linkColor: #333 !default;
+$linkHoverColor: #000 !default;
+$linkActiveColor: #000 !default;
+
+$selectionBgColor: #e2eae2 !default;
+$selectionFgColor: #fff !default;
+
+/* External navigating link */
+a, a:link			{ text-decoration: none; display: inline-block; border-bottom: 1px solid currentColor; }
+
+/* Internal navigating link */
+$internalUrl: "#";
+a[href*="#{$internalUrl}"] { border-bottom: 1px dotted currentColor; }
+
+a:visited 			{ border-bottom: 1px dashed currentColor; }
+a:hover 			{ color: #{$linkHoverColor}; }
+a:active, a:focus 	{ color: #{$linkHoverColor}; }
+
+/* Textrange styling */
+::selection 		{ background: #{$selectionBgColor}; color: #{$selectionFgColor}; }
+::-moz-selection 	{ background: #{$selectionBgColor}; color: #{$selectionFgColor}; }
+::-webkit-selection { background: #{$selectionBgColor}; color: #{$selectionFgColor}; }
+
+/* Control select behaviour on devices */
+@mixin selectBehaviour($behaviour){
+    -webkit-touch-callout: #{$behaviour};
+    -webkit-user-select: #{$behaviour};
+    -khtml-user-select: #{$behaviour};
+    -moz-user-select: #{$behaviour};
+    -ms-user-select: #{$behaviour};
+    user-select: #{$behaviour};
+}
+
+.selectNone {	@include selectBehaviour(none); }
+.selectAll {	@include selectBehaviour(all); }
+.selectAuto {	@include selectBehaviour(auto); }

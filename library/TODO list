@@ -1,0 +1,10 @@
+TODO list
+
+- tabs as links - focus styling etc
+- responsive styling
+
+CSS based widgets documentation
+
+Naming conventions
+	folder: Use hyphen
+	subfile: use underscore

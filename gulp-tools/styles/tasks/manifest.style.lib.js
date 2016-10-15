@@ -2,13 +2,13 @@
 
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
-var paths = require('../config');
+var paths = require('../../config');
 var join = require('path').join;
 var runSequence = require('run-sequence');
 var _ = require('lodash');
 var sassSrc = paths.lib.sass;
-var sassDest = paths.lib.css;
-var sassDist = paths.lib.dist;
+var cssDist = paths.lib.dest.css;
+var sassDest = paths.lib.dest.styles;
 
 var manifestDefaults = {
     manifestFile: 'asset_manifest.json',
@@ -25,25 +25,25 @@ gulp.task('clean:manifest', function () {
 });
 
 gulp.task('minify:style:lib', function () {
-    return gulp.src(sassDist)
+    return gulp.src(cssDist)
         .pipe(plugins.rename({ suffix: '.min' }))
         .pipe(plugins.minifyCss())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(sassDest))
         .on('error', plugins.util.log);
 });
 
 // Create revision version of files
 gulp.task('rev:style:lib', function () {
-    return gulp.src(sassDist)
+    return gulp.src(cssDist)
         .pipe(plugins.rev())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(sassDest))
         .pipe(plugins.rev.manifest())
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest(sassDest))
         .on('error', plugins.util.log);
 });
 
 gulp.task('manifest:style:lib', function () {
-    return createManifest(sassDest, 'kblibrary.css', 'dist');
+    return createManifest(cssDist, 'kblibrary.css', paths.lib.dest.root);
 });
 
 function createManifest(files, bundle, bundleType) {

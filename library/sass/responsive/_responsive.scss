@@ -1,7 +1,7 @@
 $breakpoints: (
-        maxes: (1:599, 2:767, 3:977, 4:1139),
-        default: 4,
-        widths: 10 20 30 40 50 60 70 80 90 100 25 75 33 66
+    maxes: (1:599, 2:767, 3:977, 4:1139),
+    default: 4,
+    widths: 10 20 30 40 50 60 70 80 90 100 25 75 33 66
 );
 
 $numBreakpoints: length(map-get($breakpoints, maxes)) + 1;
@@ -87,4 +87,3 @@ $numBreakpoints: length(map-get($breakpoints, maxes)) + 1;
     padding: 0 10px;
     box-sizing: border-box;
 }
-

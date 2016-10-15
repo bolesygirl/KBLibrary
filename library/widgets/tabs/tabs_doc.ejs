@@ -1,0 +1,48 @@
+<!--Tabs -->
+
+<h3>Main structure</h3>
+<ul>
+	<li>.tabs
+		<ul>
+			<li>.tab
+				<ul>
+					<li>button, a</li>
+					<li>.content</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<h4>Trigger (button, a)</h4>
+<ol>
+	<li>Shows the corresponding content</li>
+	<li>Normally a button tag. Use an anchor if it navigates.</li>
+</ol>
+<h4>Content (.content)</h4>
+<ol>
+	<li>Use a block element eg. &lt;div/&gt; if you want it to contain other block elements.</li>
+</ol>
+
+<h3>States</h3>
+<h4>Active</h4>
+<ol>
+	<li>Tab holder has class active</li>
+	<li>Trigger should be aria-selected="true"</li>
+	<li>Content should be visible with aria-expanded="true" and aria-hidden="false"</li>
+</ol>
+
+<h4>Inactive</h4>
+<ol>
+	<li>Tab holder does not have class active</li>
+	<li>Trigger should be aria-selected="false"</li>
+	<li>Content should be hidden with aria-expanded="false" and aria-hidden="true"</li>
+</ol>
+
+<h3>Behaviours</h3>
+<p>Activating trigger via mouse, touch or keyboard event;</p>
+<ol>
+	<li>shows corresponding content and hides any other content</li>
+	<li>focusses content for accessibility (note: may cause the tab holder to scroll the content into view if required)</li>
+	<li>sets aria states for accessibility</li>
+</ol>
