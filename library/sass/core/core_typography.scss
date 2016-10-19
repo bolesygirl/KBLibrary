@@ -1,0 +1,32 @@
+@import "core_config";
+@import "../mixins/media_queries";
+
+body {
+	font-size: map-get($typography, defaultSize) + px;
+}
+
+@mixin headings($bpNumber) {
+	$increment: map-get(map-get($typography, responsiveIncrements), $bpNumber);
+	$margin: map-get($typography, defaultVerticalGap);
+	$baseSize: map-get($typography, defaultSize);
+
+	@for $h from 1 through 5 {
+		$size: (6 - $h)*$increment + $baseSize;
+		h#{$h}, .heading#{$h} { font-size: $size + px; }
+	}
+}
+
+/* Note heading 6 is the same size as the default font size and is does not change responsively */
+
+@for $b from $numBreakpoints through 1 {
+    @if $b == map-get($responsive, defaultRange) {
+        /* defaultRange #{$b} - No media query */
+        @include headings($b);
+        h6, .heading6 { font-size: map-get($typography, defaultSize) + px; }
+    } @else if $b != $numBreakpoints {
+        /* Breakpoint #{$b} */
+        @include mediaQuery($b, false, false) {
+        	@include headings($b);
+        }
+    }
+}

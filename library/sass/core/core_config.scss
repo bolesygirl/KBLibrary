@@ -1,0 +1,32 @@
+/*
+	Ranges are the screen sizes or breakpoints at which you may want to trigger layout changes. 
+	These are used by the core_responsive.css file to make responsive css classes.
+	For instance w-10 would be 10% wide by default. w2-50 would be 50% wide in range 2.
+*/
+
+$responsive: (
+    defaultRange: 4,
+    ranges: (1:599, 2:767, 3:977, 4:1139),
+    horizontalSpacing: (1:5, 2:10, 3:10, 4:15),
+    verticalSpacing: (1:10, 2:15, 3:20, 4:25),
+    widths: 10 20 30 40 50 60 70 80 90 100 25 75 33 66
+);
+
+/* 
+	Responsive increments are used to set the heading font sizes at the different responsive ranges.
+	h6 is set at the default size then the increment is added for each heading up to an h1.
+	Eg. At range 1 an h6 is 16px, h5 is 20px (16+4), h4 is 24px (20 + 4) and so on to h1 which is 36px.
+	For completely custom heading simply replace the core_typography.scss with your own styles.
+*/
+
+/*
+	It is recommended to keep the font size at 16px to match input field font sizes as this is the 
+	minimum size that doesn't trigger automatic zooming on focus on devices.
+*/
+$typography: (
+	defaultSize: 16,
+	responsiveIncrements: (1:4, 2:5, 3:6, 4:8)
+);
+
+/* Calculated variables - do not alter */
+$numBreakpoints: length(map-get($responsive, ranges)) + 1;

@@ -1,0 +1,31 @@
+@mixin mediaQuery($bpNumber, $isMin, $bpOnly){
+    $minWidth: 0;
+    @if $bpNumber != 1 {
+        $previousBp: $bpNumber - 1;
+        $minWidth: map-get(map-get($responsive, ranges), $previousBp)+1;
+    }
+
+    $maxWidth: map-get(map-get($responsive, ranges),$bpNumber);
+
+    @if $bpOnly {
+        @if $isMin {
+            @media all and (min-width: #{$minWidth}px) {
+                @content;
+            }
+        } @else {
+            @media all and (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px) {
+                @content;
+            }
+        }
+    } @else {
+        @if $isMin {
+            @media all and (min-width: #{$minWidth}px) {
+                @content;
+            }
+        } @else {
+            @media all and (max-width: #{$maxWidth}px) {
+                @content;
+            }
+        }
+    }
+}

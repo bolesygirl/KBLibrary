@@ -1,0 +1,91 @@
+@import "core_config";
+@import "../mixins/media_queries";
+
+@mixin bpClasses($b, $bpOnly) {
+    @if $bpOnly {
+        @each $width in map-get($responsive, widths) {
+            .w#{$b}only-#{$width} { width: $width * 1%; }
+            .indent#{$b}only-#{$width}  {   margin-left: $width * 1%;  }
+        }
+    } @else {
+        @each $width in map-get($responsive, widths) {
+            .w#{$b}-#{$width} { width: $width * 1%; }
+            .indent#{$b}-#{$width}  {   margin-left: $width * 1%;  }
+        }
+    }
+}
+
+@mixin horizontalSpacingClasses($bpNumber) {
+    $pad: map-get(map-get($responsive, horizontalSpacing),$bpNumber);
+    .pad {
+        box-sizing: border-box;
+    }
+
+    .pad-sides {
+        padding-left: $pad;
+        padding-right: $pad;
+    }
+
+    .pad-left {
+        padding-left: $pad;
+    }
+
+    .pad-right {
+        padding-right: $pad;
+    }
+
+    .pad-top {
+        padding-top: $pad;
+    }
+
+    .pad-bottom {
+        padding-bottom: $pad;
+    }
+
+    .pad-height {
+        padding-top: $pad;
+        padding-bottom: $pad;
+    }
+}
+
+/* Horizontal spacing */
+.pad, .pad-sides, .pad-left, .pad-right, .pad-top, .pad-bottom, .pad-height {
+    box-sizing: border-box;
+}
+
+@for $b from $numBreakpoints through 1 {
+    @if $b == map-get($responsive, defaultRange) {
+        /* defaultRange #{$b} - No media query */
+        @each $width in map-get($responsive, widths) {
+            .w-#{$width} { width: $width * 1%; }
+            .indent-#{$width} { margin-left: $width * 1%; }
+        }
+        @include horizontalSpacingClasses($b);
+
+        /* Breakpoint #{$b} */
+        @include mediaQuery($b, false, false) {
+            @include bpClasses($b, false);
+        }
+        @include mediaQuery($b, false, true) {
+            @include bpClasses($b, true);
+        }
+        .pad {
+            padding: 0 map-get(map-get($responsive, horizontalSpacing),$b);
+        }
+    } @else if $b == $numBreakpoints {
+        /* Breakpoint #{$b} - Largest breakpoint */
+        @include mediaQuery($b, true, false) {
+            @include bpClasses($b, false);
+            @include horizontalSpacingClasses($b);
+        }
+    } @else {
+        /* Breakpoint #{$b} */
+        @include mediaQuery($b, false, false) {
+            @include bpClasses($b, false);
+            @include horizontalSpacingClasses($b);
+        }
+        @include mediaQuery($b, false, true) {
+            @include bpClasses($b, true);
+        }
+    }
+}
