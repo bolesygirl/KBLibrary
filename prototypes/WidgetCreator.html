@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="ConstantsCtrl as constantsCtrl" data-ng-class="{isDesktop: !constantsCtrl.environment.isMobile, isMobile: constantsCtrl.environment.isMobile, isAndroid: constantsCtrl.environment.isAndroid, isAndroidPhone: constantsCtrl.environment.isAndroidPhone, isIframe: constantsCtrl.environment.isIframe, accessibilityMode: constantsCtrl.environment.accessibilityMode}">
+
+<head>
+
+<meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="format-detection" content="telephone=no" />
+
+</head>
+
+<body ng-cloak="ng-cloak" data-ng-csp="no-unsafe-eval" data-ng-controller="MainController as mainController">
+
+	<div class="page-spinner ng-cloak"></div>
+
+	<accessibility-toggle></accessibility-toggle>
+
+	<form action="" method="post" name="form" novalidate="novalidate" autocomplete="off">
+        <!-- fake fields are a workaround for chrome autofill getting the wrong fields (http://stackoverflow.com/questions/15738259/disabling-chrome-autofill) -->
+        <label><input style="display:none" type="text" name="faketextfield"/></label>
+        <label><input style="display:none" type="password" name="fakepasswordfield"/></label>
+
+		<div class="widget-creator" data-ng-controller="WidgetCreator as widgetCtrl">
+
+		<style>
+		#chart_div {
+			width: 500px;
+			height: 300px;
+		}
+		</style>
+			
+			<div id="chart_div"></div>
+
+		</div>
+    
+    </form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="app.environment.js"></script>
+
+	<script>
+	angular.module('app.widgetCreator', []);
+
+	angular.module('app.widgetCreator')
+		.controller('WidgetCreator', [function(){
+			var widgetCtrl = this;
+
+			/*
+			widgetCtrl.drawGoogleChart = function() {
+				var data = new google.visualization.DataTable();
+				      data.addColumn('string', 'Topping');
+				      data.addColumn('number', 'Slices');
+				      data.addRows([
+				        ['Mushrooms', 3],
+				        ['Onions', 1],
+				        ['Olives', 1], 
+				        ['Zucchini', 1],
+				        ['Pepperoni', 2]
+				      ]);
+
+				var options = {
+				  'legend':'left',
+				  'title':'My Big Pie Chart',
+				  'is3D':true,
+				  'width':400,
+				  'height':300
+				};
+
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+		      	chart.draw(data, options);
+		    };
+		    */
+
+
+			$(document).on('chartPackageReady', function(){
+				
+			});
+		}]);
+	</script>
+
+
+	<script src="app.definition.js"></script>
+
+	<script>
+	angular.module('app').controller('MainController', ['$scope', function($scope){
+		var mainCtrl = this;
+
+		mainCtrl.model = {};
+
+
+	}]);
+
+	</script>
+
+<!--
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<script>
+      // Load the Visualization API and the corechart package.
+      var chartPackageReady = false;
+      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.setOnLoadCallback(initCharts);
+
+      function initCharts(){
+      	chartPackageReady = true;
+      	$(document).trigger('chartPackageReady');
+      }
+
+      
+
+	</script>
+-->
+
+	<style>
+	#chartist {
+		width: 75%;
+		height: 400px;
+		font-family: arial;
+        position: relative;
+	}
+
+    .chartist-tooltip {
+        opacity: 0;
+        position: absolute;
+        -webkit-transition: opacity .2s linear;
+        -moz-transition: opacity .2s linear;
+        -o-transition: opacity .2s linear;
+        transition: opacity .2s linear;
+    }
+
+    .chartist-tooltip.tooltip-show {
+        opacity: 1;
+    }
+	</style>
+
+	<div id="chartist" class="ct-chart"></div>
+	<link rel="stylesheet" href="../vendor/scripts/chartist.min.css">
+    <script src="../vendor/scripts/chartist.min.js"></script>
+    <script src="../vendor/scripts/chartist-plugin-accessibility.min.js"></script>
+    <script src="../vendor/scripts/chartist-plugin-axistitle.min.js"></script>
+    <script src="../vendor/scripts/chartist-plugin-tooltip.min.js"></script>
+
+	<script>
+		var chart = new Chartist.Line('.ct-chart', {
+		  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		  series: [
+		    {name: 'Income', data: [20000, 30000, 35000, 32000, 40000, 42000, 50000, 62000, 80000, 94000, 100000, 120000]},
+		    {name: 'Expenses', data: [10000, 15000, 12000, 14000, 20000, 23000, 22000, 24000, 21000, 18000, 30000, 32000]}
+		  ]
+		}, {
+		  chartPadding: {
+		    top: 20,
+		    right: 0,
+		    bottom: 30,
+		    left: 30
+		  },
+		  axisY: {
+		    onlyInteger: true
+		  },
+		  plugins: [
+		    Chartist.plugins.ctAccessibility({
+		      caption: 'Fiscal year 2015',
+		      seriesHeader: 'business numbers',
+		      summary: 'A graphic that shows the business numbers of the fiscal year 2015',
+		      valueTransform: function(value) {
+		        return value + ' dollar';
+		      }
+		    }),
+            Chartist.plugins.tooltip(),
+		    Chartist.plugins.ctAxisTitle({
+		      axisX: {
+		        axisTitle: 'Month',
+		        axisClass: 'ct-axis-title',
+		        offset: {
+		          x: 0,
+		          y: 50
+		        },
+		        textAnchor: 'middle'
+		      },
+		      axisY: {
+		        axisTitle: 'Amount',
+		        axisClass: 'ct-axis-title',
+		        offset: {
+		          x: 0,
+		          y: 15
+		        },
+		        textAnchor: 'middle',
+		        flipTitle: true
+		      }
+		    })
+		  ]
+		});
+	</script>
+
+
+
+</body>
+
+</html>
